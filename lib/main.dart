@@ -426,7 +426,7 @@ class _CategoryPageState extends State<CategoryPage> {
   void _startQuiz(String category, Color color) {
     if (_nameController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Silakan masukkan nama kamu terlebih dahulu!')),
+        const SnackBar(content: Text('Silakan masukkan nama kamu terlebih dahulu')),
       );
       return;
     }
