@@ -425,7 +425,6 @@ class _CategoryPageState extends State<CategoryPage> {
 
   void _startQuiz(String category, Color color) {
     if (_nameController.text.trim().isEmpty) {
-      // Peringatan jika nama belum diisi
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Silakan masukkan nama kamu terlebih dahulu!')),
       );
@@ -450,7 +449,7 @@ class _CategoryPageState extends State<CategoryPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFFDF6F9),
       appBar: AppBar(
-        title: const Text("Kuis Firebase"),
+        title: const Text("Quiz App"),
         centerTitle: true,
         backgroundColor: const Color(0xFFF8C8DC),
       ),
@@ -458,7 +457,6 @@ class _CategoryPageState extends State<CategoryPage> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            // Kolom Input Nama Pengguna
             Card(
               elevation: 2,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -480,7 +478,6 @@ class _CategoryPageState extends State<CategoryPage> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            // Daftar Pilihan Kategori
             Expanded(
               child: GridView.builder(
                 itemCount: categories.length,
@@ -589,7 +586,6 @@ class _QuizPageState extends State<QuizPage> {
     bool finished = questionIndex >= widget.questions.length;
 
     if (finished) {
-      // Jalankan fungsi simpan skor ke Firebase begitu kuis selesai
       _saveScoreToFirebase();
 
       return Scaffold(
